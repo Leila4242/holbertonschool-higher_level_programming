@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
-    if roman_string is None:
+    if roman_string == None:
         return None
     result = 0
     roman_numerals = {
