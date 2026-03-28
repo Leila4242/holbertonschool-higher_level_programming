@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 def roman_to_int(roman_string):
-    if roman_string == None:
+    if roman_string is None:
         return None
+    if type(roman_string) == str:
+        return 0
     result = 0
     roman_numerals = {
     'I': 1,
