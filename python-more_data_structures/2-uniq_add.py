@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 def uniq_add(my_list=[]):
     uniq_list = []
-    for i in range(len(my_list)-1):
-        if i is not uniq_list:
+    for i in my_list:
+        if i not in uniq_list:
             uniq_list.append(i)
     sum = 0
     for i in uniq_list:
