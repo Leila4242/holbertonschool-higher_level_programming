@@ -2,7 +2,7 @@
 def roman_to_int(roman_string):
     if roman_string is None:
         return None
-    if type(roman_string) == str:
+    if type(roman_string) != str:
         return 0
     result = 0
     roman_numerals = {
