@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 """
-This module defines a Square class with private size, 
-including getter and setter methods for validation.
+This module defines a Square class.
+
+It includes a private attribute 'size' with a getter and setter
+to manage validation of the square's dimensions.
 """
 
 
@@ -10,7 +12,7 @@ class Square:
     A class that represents a square.
 
     Attributes:
-        __size (int): The length of a side of the square.
+        size (int): The length of a side of the square.
     """
 
     def __init__(self, size=0):
