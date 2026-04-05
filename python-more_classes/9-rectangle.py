@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This module defines a Rectangle class with a class method 
+This module defines a Rectangle class with a class method
 to create a Square instance.
 """
 
@@ -74,15 +74,7 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
-        """
-        Returns a new Rectangle instance with width == height == size.
-
-        Args:
-            size (int): The size of the sides of the square.
-
-        Returns:
-            Rectangle: A new instance created via the class (cls).
-        """
+        """Returns a new Rectangle instance with width == height == size."""
         return cls(size, size)
 
     def __str__(self):
