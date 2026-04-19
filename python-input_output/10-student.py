@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""Module defining a Student class with optional JSON filtering."""
+"""Defining a Student class with optional JSON filtering."""
 
 
 class Student:
-    """Represents a student with first_name, last_name and age."""
+    """A student with first_name, last_name and age."""
 
     def __init__(self, first_name, last_name, age):
         """Initialize a Student instance."""
@@ -12,7 +12,7 @@ class Student:
         self.age = age
 
     def to_json(self, attrs=None):
-        """Return a dictionary representation, filtered by attrs if provided."""
+        """Return a dictionary representation."""
         if isinstance(attrs, list) and all(isinstance(a, str) for a in attrs):
             return {k: v for k, v in self.__dict__.items() if k in attrs}
         return self.__dict__
