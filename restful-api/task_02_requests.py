@@ -8,19 +8,23 @@ def fetch_and_print_posts():
         print('Status Code: {}'.format(status_code))
 
 def fetch_and_save_posts():
-    for post in r.json():
-        status_code = r.status_code
-        if status_code == 200:
-            posts = r.json()
-            keys = posts[0].keys()
-            values = [post.values() for post in posts]
+    # ... məlumatı çəkmə hissəsi ...
+    posts = response.json()
+    
+    # 1. Yalnız lazım olan sütunları seçərək yeni siyahı hazırlayırıq
+    data_to_save = []
+    for post in posts:
+        data_to_save.append({
+            'id': post['id'],
+            'title': post['title'],
+            'body': post['body']
+        })
 
+    # 2. Fayla yazma (Ardıcıllığa və writeheader-ə diqqət!)
     with open('posts.csv', 'w', newline='', encoding='utf-8') as f:
-        # DictWriter obyektini yaradırıq
-        dict_writer = csv.DictWriter(f, fieldnames=keys)
+        # fieldnames tam olaraq testin gözlədiyi ardıcıllıqda olmalıdır
+        fieldnames = ['id', 'title', 'body']
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
         
-        # Sütun adlarını (başlıqları) fayla yazırıq
-        dict_writer.writeheader()
-        
-        # Bütün siyahını (list) fayla yazırıq
-        dict_writer.writerows(posts)
+        writer.writeheader() # Başlıqları yazır: id,title,body
+        writer.writerows(data_to_save) # Məlumatları yazır
