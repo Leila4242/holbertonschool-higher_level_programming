@@ -9,7 +9,7 @@ def fetch_and_print_posts():
 
 def fetch_and_save_posts():
     # ... məlumatı çəkmə hissəsi ...
-    posts = response.json()
+    posts = r.json()
     
     # 1. Yalnız lazım olan sütunları seçərək yeni siyahı hazırlayırıq
     data_to_save = []
