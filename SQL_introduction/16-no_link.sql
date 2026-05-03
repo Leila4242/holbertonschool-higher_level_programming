@@ -1,8 +1,8 @@
--- Lists the number of records with the same score,
--- but only for rows where the name is not empty (NULL).
--- Results are ordered by the number of records (descending).
-SELECT score, COUNT(*) AS number
+-- Lists all records of the table second_table
+-- Don't list rows without a name value
+-- Results should display score and name (in this order)
+-- Records should be listed by descending score
+SELECT score, name
 FROM second_table
-WHERE name IS NOT NULL
-GROUP BY score
-ORDER BY number DESC;
+WHERE name IS NOT NULL AND name <> ''
+ORDER BY score DESC;
