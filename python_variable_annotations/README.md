@@ -1,1 +1,0 @@
-This task consists python_variable_annotations
